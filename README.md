@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+Funcionalidade:
+Máscara para celular ou telefone fixo brasileiro.
+Adiciona formatação("(XX) X XXXX-XXXX" ou "(XX) XXXX-XXXX") e verifica se o DDD é válido no país.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Recursos:
+TypeScript;
+React (ChangeEvent e useState);
+Regex;
 
-## Available Scripts
+Utilização de Regex para retirar caracteres do valor e passar por uma validação
+de DDD (tabela com os DDDs válidos ao final), valor "0" antes dos outros digitos de DDD
+não pode ser incluso.
 
-In the project directory, you can run:
+Números com quantidade de algarismos menor ou maior q o padrão brasileiro será considerado invalido,
+sendo o mesmo verifiado com a ultização de Regex e .length.
 
-### `npm start`
+Mascara do telefone é aplicada ao ser indentificado a quantidade minima de algarismos no valor do 
+número de telefone,podendo ser complementado mais um algarismo (caso seja formato de celular).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Abaixo do Input há dois textos que indicam se tudo esta nos conformes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tabela com os DDDs válidos:[ 11, 12, 13, 14, 15, 16, 17, 18, 19,
+      			                 21, 22, 24, 27, 28, 31, 32, 33, 34,
+      			                 35, 37, 38, 41, 42, 43, 44, 45, 46,
+                             47, 48, 49, 51, 53, 54, 55, 61, 62,
+      			                 64, 63, 65, 66, 67, 68, 69, 71, 73,
+      			                 74, 75, 77, 79, 81, 82, 83, 84, 85,
+      			                 86, 87, 88, 89, 91, 92, 93, 94, 95,
+      			                 96, 97, 98, 99 ]
