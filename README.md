@@ -6,6 +6,7 @@ Recursos:
 TypeScript;
 React (ChangeEvent e useState);
 Regex;
+Yarn;
 
 Utilização de Regex para retirar caracteres do valor e passar por uma validação
 de DDD (tabela com os DDDs válidos ao final), valor "0" antes dos outros digitos de DDD
