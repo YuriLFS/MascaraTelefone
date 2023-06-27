@@ -1,4 +1,7 @@
 import { ChangeEvent, useState } from 'react';
+import { Input } from '@chakra-ui/react';
+import { InputGroup } from "@chakra-ui/react";
+import { InputLeftAddon } from '@chakra-ui/react';
 
 function CaixaTelefone() {
   const [numero, setNumero] = useState("");
@@ -75,9 +78,12 @@ function CaixaTelefone() {
 
   return (
     <>
-      <input type="text" id="telefone" placeholder="DDD + telefone" value={numeroFormatado4 || ''} onChange={handleChange} />
-      <p>{ehValidoDDD ? 'DDD válido' : 'DDD inválido.'}</p>
-      <p>{ehValidoTelefone ? 'Telefone nos conformes' : 'Telefone inválido.'}</p>
+      <InputGroup marginLeft={'12px'}>
+      <InputLeftAddon children='+55' />
+      <Input type="text" id="telefone" style={{textAlign:'center',backgroundColor:'white'}} focusBorderColor='black' placeholder="DDD + telefone" value={numeroFormatado4 || ''} onChange={handleChange} width={'80%'} marginBottom={'10px'} />
+      </InputGroup>
+      <p className={ehValidoDDD ? 'mensagem-valida validoSubilinhado' : 'mensagem-invalida invalidoSubilinhado'} >{ehValidoDDD ? 'DDD válido' : 'DDD inválido.'}</p>
+      <p style={{marginBottom:'20px'}} className={ehValidoTelefone ? 'mensagem-valida validoSubilinhado' : 'mensagem-invalida invalidoSubilinhado'}>{ehValidoTelefone ? 'Telefone nos conformes' : 'Telefone inválido.'}</p>
     </>
   );
 }
